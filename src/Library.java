@@ -30,14 +30,14 @@ public class Library {
         if(findBook(title) == null)
             throw new BookNotFoundException("Book with title " + title + " not found.");
 
-          System.out.println("The book " + title + " successfully loaned.");
+          System.out.println(findBook(title).toString() + " successfully loaned.");
     }
 
     public void returnBook(String title) throws BookNotFoundException {
           if(findBook(title) == null)
               throw new BookNotFoundException("Connot return. Book with title " + title + " not found.");
 
-          System.out.println("The book: " + title + " successfully return.");
+          System.out.println(findBook(title).toString() + " successfully return.");
     }
 
     public void listBooks() throws EmptyLibraryException{
