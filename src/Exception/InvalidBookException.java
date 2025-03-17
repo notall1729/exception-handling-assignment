@@ -1,4 +1,4 @@
 package Exception;
 
-public class InvalidBookException {
+public class InvalidBookException extends Exception{
 }
