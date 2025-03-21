@@ -22,7 +22,7 @@ public class Main {
             book1 = new Book("Java Programming", 300);
             book2 = new Book("Design Patterns", -3);
             book3 = new Book(null, 100);
-            book4 = new Book(" ", 400);
+            book4 = new Book("", 400);
         }catch (InvalidBookException e){
             System.out.println(e.getMessage());
         }
@@ -46,11 +46,19 @@ public class Main {
         try {
             library.borrowBook("Java Programming");
             library.returnBook("Clean Code");
+
+        }catch (BookNotFoundException e){
+            System.out.println(e.getMessage());
+
+        }catch (EmptyLibraryException e1){
+            System.out.println(e1.getMessage());
+        }
+
+        try{
             library.returnBook("Java Programming");
         }catch (BookNotFoundException e){
             System.out.println(e.getMessage());
-        }catch (EmptyLibraryException e1){
-            System.out.println(e1.getMessage());
+
         }
     }
 }
